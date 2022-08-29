@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.strap-line:before{
+	content: '';
+	animation-name: strapLineAnimation;
+	animation-duration: 0.8s;
+	animation-delay: 0.5s;
+	animation-fill-mode: forwards;	
+	animation-timing-function: ease-in-out;
+	@apply bg-primary-orange absolute left-0 top-0 w-full h-full max-w-0;
+}
+
+.bg-circle-container{
+	animation-name: bgCircleAnimation;
+	animation-duration: 1.5s;
+	animation-fill-mode: forwards;	
+}
+
+.bg-circle:nth-child(1) {
+  animation-name: circleAnimationTop;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+.bg-circle:nth-child(2) {
+	animation-name: circleAnimationBottom;
+	animation-duration: 1.5s;
+	animation-fill-mode: forwards;
+}
+
+
+@keyframes strapLineAnimation {
+	to {
+		@apply max-w-full
+	}
+}
+
+
+@keyframes bgCircleAnimation {
+	to {
+		@apply rotate-45;
+	}
+}
+
+@keyframes circleAnimationTop {
+	to {
+		@apply translate-x-16;
+	}
+}
+
+@keyframes circleAnimationBottom {
+	to {
+		@apply -translate-x-16;
+	}
+}
